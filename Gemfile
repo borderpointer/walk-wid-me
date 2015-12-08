@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use for Angular JS
 gem 'angularjs-rails'
 # Use Bootstrap for CSS Framework
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Use devise for user authentication

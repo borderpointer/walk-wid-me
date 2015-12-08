@@ -1,8 +1,91 @@
-<div id = "video-div" ngvideo>
-    <button ng-click="video.generateNewVid()" id = "new-vid-btn">Walk with a different Dog</button>
+<div id = "video-div"></div>
+
+<div id = "logo-container">
+    <a href="#" id="logo" onclick="location.reload()">Walk Wid Me</a>
 </div>
 
-<form action="/">
-  <input type="checkbox" value="true">Favorite<br>
-  <input type="submit" value="Save">
-</form>
+<div id = "user-links">
+
+    <button ngvideo class="btns" ng-click="video.generateNewVid()">Walk with a different Dog</button><br>
+
+    <% if user_signed_in? %>
+
+    <div id = "user-info">
+
+        <h2>Hello, <%= current_user.username %>!</h2>
+        <a href="#" class="btns">Save Vid</a>
+        <%= link_to "Logout", destroy_user_session_path, class: "btns", method: :delete, style: "top: 135px;" %>
+    </div>
+
+    <% else %>
+
+    <button type="button" class="btns" data-toggle="modal" data-target="#login" style="top: 75px;">Login To Save Video</button><br>
+    <button type="button" class="btns" data-toggle="modal" data-target="#signup" style="top: 150px;">Sign Up To Save Video</button>
+
+    <div id = "login" class="modal" tabindex="-1" role="dialog">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class = "general-form modal-body">
+
+                    <h2>Log In</h2>
+
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                        <%= f.email_field :email, placeholder: "Email" %><br>
+                        <%= f.password_field :password, autocomplete: "off", placeholder: "Password", style: 'margin-left: 4px;' %>
+                        <br>
+                        <div id = "remember">
+                            <% if devise_mapping.rememberable? -%>
+
+                              <%= f.check_box :remember_me, id: "remember-checkbox" %>
+                              <%= f.label :remember_me %>
+
+                            <% end -%>
+                        </div>
+                        <%= f.submit "Let Me In" , class: "form-btns" %>
+
+                    <% end %>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="signup" class="modal" tabindex="-1" role="dialog">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class = "general-form modal-body">
+
+                    <h2>Sign up</h2>
+
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= devise_error_messages! %>
+
+                        <%= f.text_field :username, autofocus: true, placeholder: "First Name" %><br>
+                        <%= f.email_field :email, placeholder: "Email" %><br>
+                        <%= f.password_field :password, autocomplete: "off", placeholder: "Password (8 chars minimum)" %><br>
+                        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password" %><br>
+                        <%= f.submit "Sign Me Up", class: "form-btns" %>
+                    <% end %>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <% end %>
+
+</div>
+

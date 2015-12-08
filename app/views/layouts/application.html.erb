@@ -1,57 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="Videos">
+
 <head>
+
   <title>Walk Wid Me</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+
 </head>
+
 <body>
-
-<header>
-
-        <nav class = "header-nav">
-
-            <a href="/">Walk Wid Me</a>
-
-            <div class = "nav-links">
-
-                <% if user_signed_in? %>
-
-                <p style="font-weight: 700;">Hello, <%= current_user.first_name %>!</p>
-                <%= link_to 'Edit Profile', edit_user_registration_path%>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-
-                <% else %>
-
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-form"}) do |f| %>
-
-                    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
-                    <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
-                    <%= f.submit "Log in" , class: "header-login-btn" %>
-                    <%= link_to "Sign Up", new_user_registration_path, class: "header-signup-btn" %>
-                    <br>
-                    <% if devise_mapping.rememberable? -%>
-
-                      <hr style="height: 1px; margin: 0; border: 0;">
-                      <%= f.check_box :remember_me, id: "remember-checkbox" %>
-                      <%= f.label :remember_me %>
-
-                    <% end -%>
-
-                    <%= link_to "Forgot Password", new_user_password_path, id: "forgot-pw" %>
-
-                <% end %>
-
-                <% end %>
-
-            </div>
-
-        </nav>
-
-    </header>
 
 <%= yield %>
 
 </body>
+
 </html>
