@@ -27,5 +27,3 @@ I wanted to build a simple Rails app that utilizes Angular.js.
 
 Beta available: [here](#)
 
-- Currently, users cannot upload their avatars.
-
