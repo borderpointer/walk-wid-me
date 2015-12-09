@@ -74,50 +74,8 @@ iframe {
   position: absolute;
 }
 
-.modal-backdrop.in {
-  z-index: 10;
-}
-
-.general-form {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 50px 0;
-}
-
-.general-form h2 {
-  margin: 0;
-  padding-bottom: 35px;
-}
-
 button:focus {
   outline: none;
-}
-
-input {
-  font-size: 1.25em;
-  padding: 18px 20px;
-  margin: 5px 0;
-  -webkit-appearance: none;
-  border: 1px solid #AEAEAE;
-  padding: 18px 10px;
-  transition: all .3s ease;
-  color: #333;
-  font-size: 1.25em;
-  margin: 5px 0;
-}
-
-.form-btns {
-  font-size: 1.25em;
-  padding: 18px 20px;
-  margin: 5px 0;
-  -webkit-appearance: none;
-  padding: 18px 10px;
-  transition: all .3s ease;
-  color: #fff;
-  font-size: 1.25em;
-  margin: 10px 0;
-  background-color: #55AF64;
 }
 
 .btns {
@@ -136,45 +94,6 @@ input {
   -ms-transition:     0.08s ease-in-out;
   -moz-transition:    0.08s ease-in-out;
   -webkit-transition: 0.08s ease-in-out;
-}
-
-input, .form-btns{
-  width: 72%;
-}
-
-input:focus {
-  border: #333 solid 1px;
-  outline: none;
-}
-
-.form-btns:focus {
-  border: #5F97AF solid 1px;
-  outline: none;
-}
-
-.form-btns:hover {
-  background-color: #5F97AF;
-}
-
-label {
-  font-weight: normal;
-}
-
-input[type="checkbox"] {
-  width: 10px;
-  height: 10px;
-}
-
-
-
-#remember {
-  padding-top: 5px;
-  width: 85%;
-  text-align: right;
-}
-
-.modal-content {
-  border-radius: 0px;
 }
 
 .btns:hover, #logo:hover {
@@ -211,14 +130,4 @@ input[type="checkbox"] {
 
 #logo:hover:before {
   bottom: 0;
-}
-
-#user-info {
-  position: absolute;
-  top: 100px;
-}
-
-#user-info > h2 {
-  color: #fff;
-  margin: 10px 0 20px 0;
 }

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
+namespace :api do
   resources :videos, only: [:index], defaults: {format: :json}
+end
 
-  get 'videos/:id' => 'videos#show', as: "video"
   root "videos#show"
 
-  devise_for :users, controllers: { registrations: "registrations"}
-
 end
+

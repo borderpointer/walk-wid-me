@@ -24,14 +24,13 @@ angular.element(document).ready(function () {
     // initializing the website with one random vid
     console.log('initialize vid');
 
-    $.get('/videos').then(function(response) {
+    $.get('/api/videos').then(function(response) {
 
         var randomNumber = Math.floor(Math.random() * (response.length - 0 + 1)) + 0;
         var randomVidURL = response[randomNumber].url;
 
         // append iframe with random vid url
         $('#video-div').append("<iframe id='iframe-vid' src='" + randomVidURL + "' style='border: 0; width: 100vw; height: 100vh;'  frameborder='0'></iframe>");
-        console.log(response[randomNumber]);
 
     });
 
@@ -53,14 +52,13 @@ angular.module('Videos',[]).directive('ngvideo', function() {
 
                 console.log('getting a new random vid');
 
-                self.$http.get('/videos').then(function(response) {
+                self.$http.get('/api/videos').then(function(response) {
 
                     var randomNumber = Math.floor(Math.random() * (response.data.length - 0 + 1)) + 0;
                     var randomVidURL = response.data[randomNumber]['url'];
 
                     // replace the iframe's src with new vid url
                     $('#iframe-vid').attr('src', randomVidURL);
-                    console.log(response.data[randomNumber]);
 
                 });
 
@@ -71,4 +69,3 @@ angular.module('Videos',[]).directive('ngvideo', function() {
     } // close return object
 
 }) // close angular module
-

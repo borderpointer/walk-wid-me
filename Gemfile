@@ -20,8 +20,6 @@ gem 'angularjs-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Use devise for user authentication
-gem 'devise'
 # For TDD
 gem 'rspec'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
