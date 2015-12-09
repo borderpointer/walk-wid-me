@@ -24,5 +24,5 @@ I wanted to build a simple Rails app that utilizes Angular.js.
 
 ### Installation
 
-Beta available: [here](#)
+Beta available: [here](http://walk-wid-me.herokuapp.com/)
 
