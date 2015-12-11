@@ -27,6 +27,7 @@ angular.element(document).ready(function () {
     $.get('/api/videos').then(function(response) {
 
         var randomNumber = Math.floor( Math.random() * response.length );
+        console.log("response: ", response)
         console.log("response[0]: ", response[0])
         console.log("rand num: ", randomNumber);
         console.log("response[0] url if it exists: ", response[0].url);
