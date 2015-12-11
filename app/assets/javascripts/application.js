@@ -27,6 +27,7 @@ angular.element(document).ready(function () {
     $.get('/api/videos').then(function(response) {
 
         var randomNumber = Math.floor( Math.random() * response.length );
+        console.log(randomNumber);
         var randomVidURL = response[randomNumber].url;
 
         // append iframe with random vid url
@@ -55,6 +56,7 @@ angular.module('Videos',[]).directive('ngvideo', function() {
                 self.$http.get('/api/videos').then(function(response) {
 
                     var randomNumber = Math.floor( Math.random() * response.data.length );
+                    console.log(randomNumber);
                     var randomVidURL = response.data[randomNumber]['url'];
 
                     // replace the iframe's src with new vid url
